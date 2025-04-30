@@ -8,7 +8,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Tharindu996\\UserProfilePackage\\": "src/"
+            "Tharindu996\\UserProfile\\": "src/"
         }
     },
     "authors": [
