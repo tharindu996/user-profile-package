@@ -19,20 +19,36 @@ These instructions outline how to manually integrate this package into your Lara
     **Downloading as ZIP:**
     If you downloaded a ZIP file, extract its contents to a directory within your Laravel project, for example, `packages/tharindu996/user-profile`.
 
-2.  **Register the Service Provider:**
-    Open your Laravel project's `config/app.php` file and add the following line to the `providers` array:
+    After that, you need to install required Composer packages.
+
+    ```
+    cd packages/tharindu996/user-profile-package
+    composer install
+    ```
+
+2.  **Autoload classes of the package:**
+
+    Next, you need to autoload classes of this package. Append namespace of this package in `autoload > psr-4` section of the `composer.json` file.
+
+    ```json
+    "autoload": {
+        "psr-4": {
+            "Tharindu996\\UserProfile\\": "packages/tharindu996/user-profile-package/src/"
+        }
+    }
+    ```
+
+    After that, you need to dump a new `autoload.php` file.Run below command in the root of your project. 
+    ```
+    composer dump-autoload -o
+    ```
+
+3.  **Register the Service Provider:**
+    Open your Laravel project's `bootstrap/providers.php` file and add the following line to the array:
 
     ```php
     Tharindu996\UserProfile\Providers\UserProfileServiceProvider::class,
     ```
-
-3.  **Load Package Routes:**
-    Open your Laravel project's `routes/web.php` file and add the following line, typically at the end of the file:
-
-    ```php
-    require __DIR__.'/../../packages/tharindu996/user-profile/src/routes/web.php';
-    ```
-    Adjust the path if you placed the package files in a different location.
 
 4.  **Publish Views (Optional):**
     If you want to customize the package's views, you'll need to copy them to your `resources/views` directory. Create the necessary directory:
@@ -41,7 +57,7 @@ These instructions outline how to manually integrate this package into your Lara
     mkdir -p resources/views/vendor/user-profile
     ```
 
-    Then, manually copy the view files from `packages/tharindu996/user-profile/src/views/profile` to `resources/views/vendor/user-profile`.
+    Then, manually copy the view files from `packages/tharindu996/user-profile-package/src/views/user-profile` to `resources/views/vendor/user-profile-package`.
 
 ## Usage
 
