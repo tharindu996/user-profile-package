@@ -1,0 +1,21 @@
+{
+    "name": "tharindu996/user-profile-package",
+    "description": "A simple user profile management package for Laravel 12",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tharindu996\\UserProfilePackage\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "tharindu996",
+            "email": "tharindudissanayake03@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
