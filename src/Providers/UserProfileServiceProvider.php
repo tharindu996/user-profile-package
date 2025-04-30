@@ -1,6 +1,6 @@
 <?php
 
-namespace YourVendorName\UserProfile\Providers;
+namespace Tharindu996\UserProfile\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
